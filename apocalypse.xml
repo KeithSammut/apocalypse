@@ -1,0 +1,382 @@
+<?xml version="1.0" standalone="yes" ?> 
+<scenario>
+<difficulty value="5"/>
+<players>
+	<player control="human" faction="tech" team="1"/>
+	<player control="cpu-ultra" faction="livingdead" team="2"/>		
+	<player control="cpu-ultra" faction="livingdead" team="11"/>	
+	<player control="cpu" faction="tech" team="1"/>	
+	<player control="cpu-ultra" faction="livingdead" team="2"/>	
+	<player control="cpu-ultra" faction="livingdead" team="2"/>	
+	<player control="cpu" faction="tech" team="1"/>
+	<player control="cpu" faction="tech" team="1"/>
+	
+
+	</players>
+	<map value="glenoid"/>
+	<tileset value="mediterran"/>
+	<tech-tree value="apack"/>
+	<default-resources value="true"/>
+	<default-units value="false"/>
+	<default-victory-conditions value="true"/>	
+	<fog-of-war value="false"/>
+<scripts>
+<startup>
+
+setAttackWarningsEnabled(0)
+createUnit('castle', 0, startLocation(0))
+createUnit('horseman', 0, startLocation(0))
+createUnit('worker', 0, startLocation(0))
+createUnit('worker', 0, startLocation(0))
+createUnit('worker', 0, startLocation(0))
+createUnit('farm', 0, startLocation(0))
+createUnit('barracks', 0, startLocation(0))
+
+createUnit('worker', 3, startLocation(3))
+createUnit('worker', 3, startLocation(3))
+createUnit('worker', 3, startLocation(3))
+createUnit('livestock', 3, startLocation(3))
+createUnit('castle', 3, startLocation(3))
+
+showMessage('m0', 't1')
+setDisplayText('ob1')
+addConsoleText(translate('name1') .. ' Greetings, ' .. getPlayerName(0) .. ', ' .. getPlayerName(4) .. ', ' .. getPlayerName(6) .. ' and ' .. getPlayerName(7))
+
+createUnit('worker', 6, startLocation(6))
+createUnit('worker', 6, startLocation(6))
+createUnit('worker', 6, startLocation(6))
+createUnit('livestock', 6, startLocation(6))
+createUnit('castle', 6, startLocation(6))
+createUnit('defense_tower', 6, startLocation(6))
+createUnit('guard', 6, startLocation(6))
+createUnit('swordman', 6, startLocation(6))
+createUnit('guard', 6, startLocation(6))
+createUnit('archer', 6, startLocation(6))
+createUnit('archer', 6, startLocation(6))
+createUnit('defense_tower', 6, startLocation(6))
+
+createUnit('worker', 7, startLocation(7))
+createUnit('worker', 7, startLocation(7))
+createUnit('worker', 7, startLocation(7))
+createUnit('livestock', 7, startLocation(7))
+createUnit('livestock', 7, startLocation(7))
+createUnit('castle', 7, startLocation(7))
+createUnit('swordman', 7, startLocation(7))
+createUnit('swordman', 7, startLocation(7))
+createUnit('guard', 7, startLocation(7))
+createUnit('horseman', 7, startLocation(7))
+createUnit('battle_machine', 7, startLocation(7))
+createUnit('defense_tower', 7, startLocation(7))
+
+createUnit('sancta_sanctorum', 5, startLocation(2))
+domain = lastCreatedUnit()
+
+createUnitNoSpacing('abandoned_tower', 2, {40, 130})
+createUnitNoSpacing('abandoned_house', 2, {114, 168})
+createUnitNoSpacing('astronomic_site', 2, {142, 208})
+createUnitNoSpacing('abandoned_tower', 2, {240, 230})
+createUnitNoSpacing('abandoned_house', 2, {212, 120})
+createUnitNoSpacing('astronomic_site', 2, {50, 62})
+
+createUnit('lost_soul', 1, {128, 114})
+createUnit('lost_soul', 1, {128, 114})
+createUnit('lost_soul', 1, {128, 114})
+createUnit('lost_soul', 1, {128, 114})
+createUnit('lost_soul', 1, {128, 114})
+createUnit('lost_soul', 1, {128, 114})
+createUnit('lost_soul', 1, {128, 114})
+createUnit('lost_soul', 1, {128, 114})
+createUnit('lost_soul', 1, {128, 114})
+createUnit('lost_soul', 1, {128, 114})
+createUnit('lost_soul', 1, {128, 114})
+createUnit('lost_soul', 1, {128, 114})
+
+createUnit('horde', 1, {144, 110})
+createUnit('horde', 1, {144, 110})
+createUnit('horde', 1, {144, 110})
+
+createUnit('guardian_of_sancta', 5, {114, 104})
+biome = lastCreatedUnit()
+
+final = 'false'
+
+createUnitNoSpacing('enchanted_wall', 2, {157,76})
+w13=lastCreatedUnit()
+createUnitNoSpacing('enchanted_wall', 2, {156,76})
+w15=lastCreatedUnit()
+createUnitNoSpacing('enchanted_wall', 2, {155,76})
+w14=lastCreatedUnit()
+createUnitNoSpacing('enchanted_wall', 2, {151,76})
+w3=lastCreatedUnit()
+createUnitNoSpacing('enchanted_wall', 2, {152,76})
+w4=lastCreatedUnit()
+createUnitNoSpacing('enchanted_wall', 2, {153,76})
+w5=lastCreatedUnit()
+createUnitNoSpacing('enchanted_wall', 2, {154,76})
+w1=lastCreatedUnit()
+createUnitNoSpacing('enchanted_wall', 2, {168,87})
+w2=lastCreatedUnit()
+createUnitNoSpacing('enchanted_wall', 2, {168,88})
+w6=lastCreatedUnit()
+createUnitNoSpacing('enchanted_wall', 2, {168,89})
+w7=lastCreatedUnit()
+createUnitNoSpacing('enchanted_wall', 2, {168,90})
+w8=lastCreatedUnit()
+createUnitNoSpacing('enchanted_wall', 2, {168,91})
+w16=lastCreatedUnit()
+createUnitNoSpacing('enchanted_wall', 2, {168,98})
+w9=lastCreatedUnit()
+createUnitNoSpacing('enchanted_wall', 2, {168,99})
+w10=lastCreatedUnit()
+createUnitNoSpacing('enchanted_wall', 2, {168,100})
+w11=lastCreatedUnit()
+createUnitNoSpacing('enchanted_wall', 2, {168,101})
+w12=lastCreatedUnit()
+createUnitNoSpacing('enchanted_wall', 2, {168,95})
+w17=lastCreatedUnit()
+createUnitNoSpacing('enchanted_wall', 2, {140,74})
+w18=lastCreatedUnit()
+createUnitNoSpacing('enchanted_wall', 2, {170,106})
+w19=lastCreatedUnit()
+createUnitNoSpacing('enchanted_wall', 2, {254,254})
+endRespawn=lastCreatedUnit()
+
+death = 'false'
+
+playStreamingSound('{SCENARIOPATH}/sounds/attention.ogg')
+
+</startup>
+<unitDied>
+unitB = lastDeadUnitKiller()
+unitA = lastDeadUnit()
+
+x2 = getRandomGen(92, 254)
+y2 = getRandomGen(2, 168)
+
+x = getRandomGen(104, 162)
+y = getRandomGen(78, 174)
+if lastDeadUnitCauseOfDeath() ~= 3 and unitCountOfType(2, 'enchanted_wall') ~= 0 and death == 'false' then
+	if  (lastDeadUnitName() == 'lost_soul' or lastDeadUnitName() == 'horde') and unitCountOfType(5, 'guardian_of_sancta') == 1 then
+
+		giveResource('gold', unitFaction(unitB), 20)
+		createUnit(lastDeadUnitName(), unitFaction(unitA), {x, y})
+				
+	elseif (lastDeadUnitName() == 'lost_soul' or lastDeadUnitName() == 'horde' or lastDeadUnitName() == 'pterodactyl' or lastDeadUnitName() == 'grim_beast' or lastDeadUnitName() == 'zombie') and unitCountOfType(5, 'guardian_of_sancta') == 0 then
+
+		giveResource('gold', unitFaction(unitB), 30)
+		createUnit(lastDeadUnitName(), unitFaction(unitA), {x2, y2})
+	end
+end
+   
+if lastDeadUnit() == biome then
+
+		giveResource('gold', unitFaction(unitB), 500)
+			
+			destroyUnit(w1) 
+			destroyUnit(w2) 
+			destroyUnit(w3) 
+			destroyUnit(w4) 
+			destroyUnit(w5) 
+			destroyUnit(w6) 
+			destroyUnit(w7) 
+			destroyUnit(w8) 
+			destroyUnit(w9)
+			destroyUnit(w10) 
+			destroyUnit(w11) 
+			destroyUnit(w12) 
+			destroyUnit(w13) 
+			destroyUnit(w14) 
+			destroyUnit(w15) 
+			destroyUnit(w16) 
+			destroyUnit(w17)
+			destroyUnit(w18) 
+			destroyUnit(w19)
+			timer_event1 = startTimerEvent()
+			createUnitNoSpacing('anubis_phantom', 1, startLocation(2))
+			createUnit('horde', 1, startLocation(2))
+			createUnit('horde', 1, startLocation(2))
+			createUnit('horde', 1, startLocation(2))
+			createUnit('horde', 1, startLocation(2))
+			createUnit('grim_beast', 1, startLocation(2))
+			createUnit('grim_beast', 1, startLocation(2))
+			createUnit('zombie', 1, startLocation(2))
+			createUnit('zombie', 1, startLocation(2))
+			createUnit('zombie', 1, startLocation(2))
+			createUnit('zombie', 1, startLocation(2))
+			createUnit('zombie', 1, startLocation(2))
+			createUnit('zombie', 1, startLocation(2))
+			createUnit('zombie', 1, startLocation(2))
+			createUnit('zombie', 1, startLocation(2))
+			createUnit('zombie', 1, startLocation(2))
+			createUnit('zombie', 1, startLocation(2))
+			createUnit('zombie', 1, startLocation(2))
+			createUnit('zombie', 1, startLocation(2))
+			createUnit('lost_soul', 1, startLocation(2))
+			createUnit('lost_soul', 1, startLocation(2))
+			createUnit('lost_soul', 1, startLocation(2))
+			createUnit('lost_soul', 1, startLocation(2))
+			createUnit('lost_soul', 1, startLocation(2))
+			registerUnitTriggerEvent(domain)
+			addConsoleText(translate('name1') .. ' Greetings, ' .. getPlayerName(0) .. ', ' .. getPlayerName(4) .. ', ' .. getPlayerName(6) .. ' and ' .. getPlayerName(7))
+			addConsoleText(translate('text1'))
+			setDisplayText('ob2')
+			playStaticSound('{SCENARIOPATH}/sounds/attention.ogg')
+end
+
+if lastDeadUnit() == olifant then
+
+		giveResource('gold', unitFaction(unitB), 50000)
+		giveResource('wood', unitFaction(unitB), 50000)
+		giveResource('stone', unitFaction(unitB), 50000)
+		giveResource('food', unitFaction(unitB), 50000)
+		destroyUnit(endRespawn)
+		stopTimerEvent(triggeredTimerEventId())
+		endtime = startTimerEvent()
+		addConsoleText('text3')
+		death = 'true'
+		playStaticSound('{SCENARIOPATH}/sounds/attention.ogg')
+end
+
+if lastDeadUnit() == domain then
+
+		giveResource('gold', unitFaction(unitB), 500)
+		giveResource('wood', unitFaction(unitB), 500)
+		giveResource('stone', unitFaction(unitB), 500)
+		giveResource('food', unitFaction(unitB), 500)
+		setDisplayText('ob3')
+end
+
+</unitDied>
+<timerTriggerEvent>
+			if triggeredTimerEventId() == timer_event1 then
+				if timerEventSecondsElapsed(triggeredTimerEventId()) >= 120 then
+					createUnitNoSpacing('curse_master', 1, startLocation(2))
+					stopTimerEvent(triggeredTimerEventId())
+					timer_event2 = startTimerEvent()
+				end
+			
+			elseif triggeredTimerEventId() == timer_event2 then
+				if timerEventSecondsElapsed(triggeredTimerEventId()) >= 120 then
+					createUnitNoSpacing('drakon', 1, startLocation(2))
+					stopTimerEvent(triggeredTimerEventId())
+					timer_event3 = startTimerEvent()
+				end
+
+			elseif triggeredTimerEventId() == timer_event3 then
+				if timerEventSecondsElapsed(triggeredTimerEventId()) >= 120 then
+					createUnitNoSpacing('chaotic_golem', 1, startLocation(2))
+					stopTimerEvent(triggeredTimerEventId())
+					timer_event4 = startTimerEvent()
+				end
+
+			elseif triggeredTimerEventId() == timer_event4 then
+				if timerEventSecondsElapsed(triggeredTimerEventId()) >= 120 then
+					createUnitNoSpacing('colossal_serpent', 1, startLocation(2))
+					stopTimerEvent(triggeredTimerEventId())
+					timer_event5 = startTimerEvent()
+				end
+
+			elseif triggeredTimerEventId() == timer_event5 then
+				if timerEventSecondsElapsed(triggeredTimerEventId()) >= 120 then
+					createUnitNoSpacing('triceratops', 1, startLocation(2))
+					stopTimerEvent(triggeredTimerEventId())
+					timer_event6 = startTimerEvent()
+				end
+
+			elseif triggeredTimerEventId() == timer_event6 then
+				if timerEventSecondsElapsed(triggeredTimerEventId()) >= 120 then
+					createUnitNoSpacing('fallen_valkyrie', 1, startLocation(2))
+					stopTimerEvent(triggeredTimerEventId())
+					timer_event7 = startTimerEvent()
+				end
+
+			elseif triggeredTimerEventId() == timer_event7 then
+				if timerEventSecondsElapsed(triggeredTimerEventId()) >= 120 then
+					createUnitNoSpacing('fallen_eidolon', 1, startLocation(2))
+					stopTimerEvent(triggeredTimerEventId())
+					timer_event8 = startTimerEvent()
+				end
+
+			elseif triggeredTimerEventId() == timer_event8 then
+				if timerEventSecondsElapsed(triggeredTimerEventId()) >= 120 then
+					createUnitNoSpacing('guard_of_entropy', 1, startLocation(2))
+					stopTimerEvent(triggeredTimerEventId())
+					timer_event9 = startTimerEvent()
+				end
+				
+			elseif triggeredTimerEventId() == timer_event9 then
+				if timerEventSecondsElapsed(triggeredTimerEventId()) >= 60 then
+					createUnitNoSpacing('anubis_phantom', 1, startLocation(2))
+					stopTimerEvent(triggeredTimerEventId())
+					timer_event1 = startTimerEvent()
+				end
+				
+			elseif triggeredTimerEventId() == endtime then
+				if timerEventSecondsElapsed(triggeredTimerEventId()) >= 5 then
+					setPlayerAsWinner(0)
+					setPlayerAsWinner(3)
+					setPlayerAsWinner(6)
+					setPlayerAsWinner(7)
+					endGame()
+					stopTimerEvent(triggeredTimerEventId())
+				end
+			end
+</timerTriggerEvent>
+<cellTriggerEvent>
+</cellTriggerEvent>
+<unitTriggerEvent>
+	if final == 'false' and domain == lastUnitTriggerEventUnit() and lastUnitTriggerEventType() == 1 and getUnitProperty(lastUnitTriggerEventUnit(),lastUnitTriggerEventType()) &lt;= 2000 then
+			createUnit('grim_beast', 1, startLocation(2))
+			createUnit('grim_beast', 1, startLocation(2))
+			createUnit('grim_beast', 1, startLocation(2))
+			createUnit('grim_beast', 1, startLocation(2))
+			createUnit('grim_beast', 1, startLocation(2))
+			createUnit('grim_beast', 1, startLocation(2))
+			createUnit('grim_beast', 1, startLocation(2))
+			createUnit('grim_beast', 1, startLocation(2))
+			createUnit('zombie', 1, startLocation(2))
+			createUnit('zombie', 1, startLocation(2))
+			createUnit('zombie', 1, startLocation(2))
+			createUnit('zombie', 1, startLocation(2))
+			createUnit('zombie', 1, startLocation(2))
+			createUnit('zombie', 1, startLocation(2))
+			createUnit('zombie', 1, startLocation(2))
+			createUnit('zombie', 1, startLocation(2))
+			createUnit('zombie', 1, startLocation(2))
+			createUnit('zombie', 1, startLocation(2))
+			createUnit('zombie', 1, startLocation(2))
+			createUnit('zombie', 1, startLocation(2))
+			createUnit('zombie', 1, startLocation(2))
+			createUnit('zombie', 1, startLocation(2))
+			createUnit('zombie', 1, startLocation(2))
+			createUnit('zombie', 1, startLocation(2))
+			createUnit('zombie', 1, startLocation(2))
+			createUnit('zombie', 1, startLocation(2))
+			createUnit('zombie', 1, startLocation(2))
+			createUnit('zombie', 1, startLocation(2))
+			createUnit('zombie', 1, startLocation(2))
+			createUnit('zombie', 1, startLocation(2))
+			createUnit('pterodactyl', 1, startLocation(2))
+			createUnit('pterodactyl', 1, startLocation(2))
+			createUnit('pterodactyl', 1, startLocation(2))
+			createUnit('lost_soul', 1, startLocation(2))
+			createUnit('lost_soul', 1, startLocation(2))
+			createUnit('lost_soul', 1, startLocation(2))
+			createUnit('lost_soul', 1, startLocation(2))
+			createUnit('horde', 1, startLocation(2))
+			createUnit('horde', 1, startLocation(2))
+			createUnit('horde', 1, startLocation(2))
+			createUnit('horde', 1, startLocation(2))
+			createUnit('pterodactyl', 1, startLocation(2))
+			createUnit('pterodactyl', 1, startLocation(2))
+			createUnit('olifantus_maximus', 1, startLocation(2))
+			olifant = lastCreatedUnit()
+			stopTimerEvent(triggeredTimerEventId())
+			addConsoleText('text2')
+			final = 'true'
+			playStaticSound('{SCENARIOPATH}/sounds/doombringer.ogg')
+			playStreamingSound('{SCENARIOPATH}/sounds/hellgate.ogg')
+	end
+ </unitTriggerEvent>	
+</scripts>
+</scenario>

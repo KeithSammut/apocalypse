@@ -1,0 +1,153 @@
+<?xml version="1.0" standalone="no"?>
+
+<unit>
+	<parameters>
+		<size value="4"/>
+		<height value="4"/>
+		<max-hp value="15000" regeneration="50"/>
+		<max-ep value="0" regeneration="0"/>
+		<armor value="60"/>
+		<armor-type value="stone"/>
+		<sight value="15"/>
+		<time value="70"/>
+		<multi-selection value="true"/>
+		<uniform-selection value="false"/>
+		<cellmap value="false"/>
+		<levels>
+		</levels>
+		<fields>
+			<field value="land"/>
+		</fields>
+		<properties>
+			<property value="rotated_climb"/>
+		</properties>
+		<light enabled="false"/>
+		<unit-requirements>
+		</unit-requirements>
+		<upgrade-requirements>
+		</upgrade-requirements>
+		<resource-requirements>
+		</resource-requirements>
+		<resources-stored/>
+		<image path="images/snake.png"/>
+		<image-cancel path="images/snake.png"/>
+		<meeting-point value="false"/>
+		<selection-sounds enabled="true">
+		</selection-sounds>
+		<command-sounds enabled="true">
+		</command-sounds>
+	</parameters>
+
+	<skills>
+
+		<skill>
+			<type value="stop"/>
+			<name value="stop_skill"/>
+			<ep-cost value="0"/>
+			<speed value="1000"/>
+			<anim-speed value="40"/>
+			<animation path="models/snake_standing.g3d"/>
+			<sound enabled="false"/>
+			<particles value="true">
+				<particle-file path="../lost_soul/smoke_particles.xml"/>
+			</particles>
+		</skill>
+
+		<skill>
+			<type value="move"/>
+			<name value="move_skill"/>
+			<ep-cost value="0"/>
+			<speed value="560"/>
+			<anim-speed value="86"/>
+			<animation path="models/snake_walking.g3d"/>
+			<sound enabled="false"/>
+						<particles value="true">
+				<particle-file path="fire_particles.xml"/>
+				<particle-file path="../lost_soul/smoke_particles.xml"/>
+			</particles>
+		</skill>
+
+		<skill>
+			<type value="attack"/>
+			<name value="inject_venom_skill"/>
+			<ep-cost value="0"/>
+			<speed value="75"/>
+			<anim-speed value="75"/>
+			<animation path="models/snake_attacking.g3d"/>
+			<sound enabled="true" start-time="0.5">
+				<sound-file path="sounds/inject.ogg"/>
+				<sound-file path="sounds/thump.ogg"/>
+			</sound>
+			<particles value="true">
+				<particle-file path="../lost_soul/smoke_particles.xml"/>
+			</particles>
+			<attack-strength value="500"/>
+			<attack-var value="120"/>
+			<attack-range value="4"/>
+			<attack-type value="piercing"/>
+			<attack-fields>
+				<field value="land"/>
+				<field value="air"/>
+			</attack-fields>
+			<attack-start-time value="0.64"/>
+			<projectile value="false">
+				<particle value="true" path="particle_proj.xml"/>
+				<sound enabled="true">
+				</sound>
+			</projectile>
+			<splash value="true">
+				<radius value="3"/>
+				<damage-all value="false"/>
+				<particle value="true" path="particle_splash.xml"/>
+			</splash>
+		</skill>
+
+		<skill>
+			<type value="die"/>
+			<name value="die_skill"/>
+			<ep-cost value="0"/>
+			<speed value="120"/>
+			<anim-speed value="40"/>
+			<animation path="models/snake_dying.g3d"/>
+			<sound enabled="true" start-time="0">
+				<sound-file path="sounds/snake_die1.wav"/>
+			</sound>
+			<fade value="true"/>
+		</skill>
+
+	</skills>
+
+	<!-- *** commands *** -->
+
+	<commands>
+
+		<command>
+			<type value="stop"/>
+			<name value="stop"/>
+			<image path="images/snake.png"/>
+			<unit-requirements/>
+			<upgrade-requirements/>
+			<stop-skill value="stop_skill"/>
+		</command>
+
+		<command>
+			<type value="move"/>
+			<name value="move"/>
+			<image path="images/snake.png"/>
+			<unit-requirements/>
+			<upgrade-requirements/>
+			<move-skill value="move_skill"/>
+		</command>
+		
+		<command>
+			<type value="attack"/>
+			<name value="inject_venom"/>
+			<image path="images/snake.png"/>
+			<unit-requirements/>
+			<upgrade-requirements/>
+			<move-skill value="move_skill"/>
+			<attack-skill value="inject_venom_skill"/>
+		</command>
+
+	</commands>
+</unit>
